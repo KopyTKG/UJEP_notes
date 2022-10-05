@@ -1,18 +1,21 @@
 \input{../assets/index.tex}
+
 \begin{document}
 
 \section*{Matematika 1}
 \subsection*{\textbf{Opakování}}
 \subsubsection*{Značení}
-* $\exist$ - existuje alespoň jedno \\
+* $\exists$ - existuje alespoň jedno \\
 * $\forall$ - pro každý platí \\
 * $N$ - přirozená čísla \\
 * $Z$ - celá čísla \\
 * $Q$ - racionální čísla ( zlomky $\rightarrow$ $\frac{1}{2}$...) \\
 * $R$ - iracionální čísla ($\pi$,...) 
 \subsubsection*{\textbf{Zápis}}
-- $\exist x \in N \forall y \in Z,x^2=y$
-- $\forall x\in N \exist y \in Z, x^2=y$
+\begin{gather*}    
+    \exists x \in N \forall y \in Z,x^2=y \\
+    \forall x\in N \exists y \in Z, x^2=y
+\end{gather*}
 \subsubsection*{\textbf{Reálné funkce}}
 \begin{description}
     \item \textbf{Elementární funkce} vzniká ze základních elementárních funkcí za pomocí 5 operací
@@ -24,11 +27,50 @@
 \textbf{základní funkce} $\rightarrow$ $y=\sin(x^2)$
 $f(x)=x^2 \\
 g(y) = \sin(y) \\
-g(y)= \sin(f(x)) \Rrightarrow y = \sin(x^2)$
-
+g(y)= \sin(f(x)) \Rightarrow y = \sin(x^2)$
+\\
 \textbf{základní funkce} $\rightarrow$ $y=\sin^2(x)$
 $f(x)=\sin(x) \\
 g(y) = y^2 \\
-g(y)= f(x)^2 \Rrightarrow y = \sin^2(x)$
-
+g(y)= f(x)^2 \Rightarrow y = \sin^2(x)$
+\\\\
+$y=\sqrt{(\sin^2{3x-\ln{x}})^5}$
+\\
+\subsubsection*{Neelementární funkce}
+Absolutní hodnota
+\begin{gather*}    
+    \abs{x} = x ; x > 0 \\
+    \abs{x} = 0 ; x = 0 \\
+    \abs{x} = -x ; x < 0
+\end{gather*}
+\subsection*{Elementární funkce}
+Konstantní funkce
+\begin{gather*}
+    y = x \\
+    D_y = R \\
+    H_y = {x}
+\end{gather*}
+\includegraphics[scale=.6]{konst.png}
+\\\\
+Exponenciální funkce
+\begin{gather*}
+    y = a^x \\
+    D_y = R \\
+    H_y = (0;+\infty)
+\end{gather*}
+\includegraphics[scale=.22]{exp.png} 
+\page
+Mocniná funkce
+\begin{gather*}
+    y = x^m \\
+    D_y = R \\
+    H_y = (0;+\infty)
+\end{gather*}
+\includegraphics[scale=.6]{mocnina.png} \\
+Goniometrocké fuknce
+($\sin{},\cos{},\tan{}, \coth{}$)
+\begin{gather*}
+    \tan{x}=\frac{\sin{x}}{\cos{x}} \\ \\
+    \coth{x}=\frac{\cos{x}}{\sin{x}}
+\end{gather*}
 \end{document}
