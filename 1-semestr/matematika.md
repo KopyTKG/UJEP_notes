@@ -30,14 +30,12 @@
 
 #### **základní funkce** $\rightarrow$ $y=\sin(x^2)$
 
-$
-f(x)=x^2 \\
+$f(x)=x^2 \\
 g(y) = \sin(y) \\
-g(y)= \sin(f(x)) \Rrightarrow y = \sin(x^2) $
+g(y)= \sin(f(x)) \Rrightarrow y = \sin(x^2)$
 
 #### **základní funkce** $\rightarrow$ $y=\sin^2(x)$
 
-$
-f(x)=\sin(x) \\
+$f(x)=\sin(x) \\
 g(y) = y^2 \\
-g(y)= f(x)^2 \Rrightarrow y = \sin^2(x) $
+g(y)= f(x)^2 \Rrightarrow y = \sin^2(x)$
