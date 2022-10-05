@@ -1,6 +1,6 @@
 ## Teoretické základy informatiky
 
-#### [**Back**](./README.md)
+#### [**Back**](../README.md)
 
 #### Co je to logika? zejména výroková
 

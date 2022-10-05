@@ -1,6 +1,6 @@
 # Matematika 1
 
-#### [**Back**](./README.md)
+#### [**Back**](../README.md)
 
 ## **Opakování**
 
