@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[czech]{babel}
+\usepackage[useregional=numeric]{datetime2}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{pict2e}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{setspace}
+
+\DeclareRobustCommand{\slashcirc}{{\mathpalette\doslashcirc\relax}}
+
+\makeatletter
+\newcommand\doslashcirc[2]{%
+  \sbox\z@{$#1\m@th\circ$}%
+  \setlength\unitlength{\wd\z@}
+  \begin{picture}(1,1)
+  \roundcap
+  \put(0,0){\box\z@}
+  \put(0,0){\line(1,1){1}}
+  \end{picture}%
+}
+\makeatother
+
+\newcommand{\diameter}{$\slashcirc$ }
+
+\newcommand{\TODO}[1]{
+	\begin{large}
+		\berry{
+			(\textbf{TODO:}#1)
+		}
+	\end{large}
+}
+
+\newcommand{\red}[1]{\textcolor{Red}{#1}}
+\newcommand{\blue}[1]{\textcolor{Blue}{#1}}
+\newcommand{\green}[1]{\textcolor{Green}{#1}}
+\newcommand{\brown}[1]{\textcolor{Brown}{#1}}
+\newcommand{\yellow}[1]{\textcolor{Yellow}{#1}}
+\newcommand{\magenta}[1]{\textcolor{Magenta}{#1}}
+\newcommand{\lime}[1]{\textcolor{LimeGreen}{#1}}
+\newcommand{\violet}[1]{\textcolor{Violet}{#1}}
+\newcommand{\orange}[1]{\textcolor{Orange}{#1}}
+\newcommand{\purple}[1]{\textcolor{Purple}{#1}}
+\newcommand{\brick}[1]{\textcolor{BrickRed}{#1}}
+\newcommand{\berry}[1]{\textcolor{WildStrawberry}{#1}}
+
+% page command for new page easy use
+\newcommand\page{\newpage}
+% new paragraph without bold text
+\newcommand{\para}[1]{
+	\paragraph{\normalfont{#1}}
+}
+
+\newcommand{\bitem}[1]{\item \textbf{#1}} %bold item command
+\newcommand{\mitem}[1]{\item \textbf{\large{#1}}} %main item command (large bold item)
+\newcommand{\dtitem}[1]{\item[•] #1} %dot item
+\newcommand{\dsitem}[1]{\item[-] #1} %dash item
+\newcommand{\litem}[1]{\item \begin{large}
+#1
+\end{large}} %large item
+
+% command for table of content but with new page command and no page numbering
+\newcommand{\content}{\tableofcontents
+    \thispagestyle{empty}
+    \page}
+
+% Section numbering to arabic
+\renewcommand*\thesection{\arabic{section}}
+\renewenvironment{itemize}[1]{\begin{compactitem}#1}{\end{compactitem}}
+\renewenvironment{enumerate}[1]{\begin{compactenum}#1}{\end{compactenum}}
+\renewenvironment{description}[0]{\begin{compactdesc}}{\end{compactdesc}}
+
+\newcommand{\frontpage}[2]{
+\begin{center}
+       \vspace{1cm}
+       \begin{center}
+       		\begin{small}
+               Vyšší odborná škola ekonomická, sociální a zdravotnická, \break
+		Obchodní akademie, Střední pedagogická škola a Střední zdravotnická škola, 
+						Most, příspěvková organizace 
+       		\end{small}
+       \end{center}
+		\vspace{\fill}
+        \begin{center}
+        		\begin{Huge}
+        			\textbf{Seminární práce}
+        		\end{Huge}
+        	\end{center}
+        	\begin{center}
+        		\begin{Large}
+        			\textbf{Sociální podnikání}
+        		\end{Large}
+        \end{center}
+        %\vspace{16cm}
+        \vspace{\fill}
+        \begin{normalsize}
+        		\begin{tabular}{p{0cm} p{1.5cm} p{10cm}}
+        		& \textbf{Jméno:} & Martin Kopecký   \\
+        		& \textbf{Třída:} & 1.R    \\
+       	 	& \textbf{Obor:}  & Firemní ekonomika \\
+        		& \textbf{Datum:} & \Today
+        		\end{tabular}
+        \end{normalsize}
+    \end{center}
+    \thispagestyle{empty}
+    \page
+}
+
+
+
+\graphicspath{{./images/}}
