@@ -1,4 +1,4 @@
-## Základy informatiky
+## Teoretické základy informatiky
 
 #### [**Back**](./README.md)
 

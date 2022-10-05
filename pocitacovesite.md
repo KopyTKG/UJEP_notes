@@ -1,3 +1,3 @@
-## Základy počítačových sítí
+# Základy počítačových sítí
 
 #### [**Back**](./README.md)
