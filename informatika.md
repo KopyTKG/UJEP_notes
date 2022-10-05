@@ -1,5 +1,7 @@
 ## Základy informatiky
 
+#### [**Back**](./README.md)
+
 #### Co je to logika? zejména výroková
 
 obor nebo systém, který na základě znalosti pravdivosti vstupních výroků, dokáže u soudit na pravdivost výroků jiných
