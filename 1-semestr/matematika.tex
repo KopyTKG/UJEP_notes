@@ -3,19 +3,19 @@
 \begin{document}
 
 \section*{Matematika 1}
-\subsection*{\textbf{Opakování}}
-\subsubsection*{Značení}
+\subsection{\textbf{Opakování}}
+\subsubsection{Značení}
 * $\exists$ - existuje alespoň jedno \\
 * $\forall$ - pro každý platí \\
 * $N$ - přirozená čísla \\
 * $Z$ - celá čísla \\
 * $Q$ - racionální čísla ( zlomky $\rightarrow$ $\frac{1}{2}$...) \\
 * $R$ - iracionální čísla ($\pi$,...) 
-\subsubsection*{\textbf{Zápis}}
-\begin{gather*}    
-    \exists x \in N \forall y \in Z,x^2=y \\
-    \forall x\in N \exists y \in Z, x^2=y
-\end{gather*}
+\subsubsection{\textbf{Zápis}}
+\begin{tabular}{c || c}
+    1) $\exists x \in N \forall y \in Z,x^2=y$ &
+    2) $\forall x\in N \exists y \in Z, x^2=y$ \\
+\end{tabular}
 \subsubsection*{\textbf{Reálné funkce}}
 \begin{description}
     \item \textbf{Elementární funkce} vzniká ze základních elementárních funkcí za pomocí 5 operací
@@ -24,53 +24,42 @@
 \end{description}
 
 \subsection*{skládání}
-\textbf{základní funkce} $\rightarrow$ $y=\sin(x^2)$
-$f(x)=x^2 \\
-g(y) = \sin(y) \\
-g(y)= \sin(f(x)) \Rightarrow y = \sin(x^2)$
+\begin{tabular}{p{7.5cm} p{7.5cm}}
+    \textbf{základní funkce} & \textbf{základní funkce} \\
+    $y=\sin{x^2}$ & $y=\sin^2{x}$ \\
+    \hline
+    $f(x)=x^2$ & $f(x)=\sin{x}$  \\
+    $g(y) = \sin{y}$ & $g(y) = y^2 $  \\
+    $g(y)= \sin{f(x)} \Rightarrow y = \sin{x^2}$ & 
+    $g(y)= f(x)^2 \Rightarrow y = \sin^2{x}$ \\
+\end{tabular}
 \\
-\textbf{základní funkce} $\rightarrow$ $y=\sin^2(x)$
-$f(x)=\sin(x) \\
-g(y) = y^2 \\
-g(y)= f(x)^2 \Rightarrow y = \sin^2(x)$
-\\\\
-$y=\sqrt{(\sin^2{3x-\ln{x}})^5}$
-\\
-\subsubsection*{Neelementární funkce}
-Absolutní hodnota
-\begin{gather*}    
+\subsection*{Neelementární funkce}
+Absolutní hodnota \\
+\(
     \abs{x} = x ; x > 0 \\
     \abs{x} = 0 ; x = 0 \\
     \abs{x} = -x ; x < 0
-\end{gather*}
-\subsection*{Elementární funkce}
-Konstantní funkce
-\begin{gather*}
-    y = x \\
-    D_y = R \\
-    H_y = {x}
-\end{gather*}
-\includegraphics[scale=.6]{konst.png}
-\\\\
-Exponenciální funkce
-\begin{gather*}
-    y = a^x \\
-    D_y = R \\
-    H_y = (0;+\infty)
-\end{gather*}
-\includegraphics[scale=.22]{exp.png} 
-\page
-Mocniná funkce
-\begin{gather*}
-    y = x^m \\
-    D_y = R \\
-    H_y = (0;+\infty)
-\end{gather*}
-\includegraphics[scale=.6]{mocnina.png} \\
+\)
+    \subsection*{Elementární funkce}
+\begin{tabular}{p{6cm} p{6cm} p{6cm}}
+    Konstantní funkce & Exponenciální funkce & Mocniná funkce \\
+    $y = x$ & $y = a^x$ & $y = x^m$ \\
+    $D_y=R$ & $D_y = R$ & $D_y = R$ \\
+    $H_y = {x}$ & $H_y = (0;+\infty)$ & $H_y = (0;+\infty)$ \\ \\
+    \includegraphics[scale=.5]{konst.png}&
+    \includegraphics[scale=.2]{exp.png}&
+    \includegraphics[scale=.5]{mocnina.png} \\
+
+\end{tabular}
+
 Goniometrocké fuknce
 ($\sin{},\cos{},\tan{}, \coth{}$)
-\begin{gather*}
-    \tan{x}=\frac{\sin{x}}{\cos{x}} \\ \\
-    \coth{x}=\frac{\cos{x}}{\sin{x}}
-\end{gather*}
+ 
+\begin{center}
+    \begin{tabular}{p{5cm} p{5cm}}
+        \(\tan{x}=\frac{\sin{x}}{\cos{x}} \)&
+        \(\coth{x}=\frac{\cos{x}}{\sin{x}} \) \\
+    \end{tabular}
+\end{center}
 \end{document}
