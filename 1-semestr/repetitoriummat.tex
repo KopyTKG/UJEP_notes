@@ -6,38 +6,84 @@
 (a-b)^2 = a^2 -2ab + b^2 \\
 (a+b)(a-b) = a^2 - b^2
 \)
-\subsection*{Test repetitorium}
-\subsubsection{Upravte do základního tvaru}
+\subsection*{Test repetitorium} 
+\begin{example}
+    Upravte do základního tvaru: $\left(
+        \frac{-16}{3}
+    \right) \cdot 
+    \sqrt{
+        \frac{2}{3}} + 
+        \frac{\frac{64}{9}}
+        {2\cdot\sqrt{\frac{2}{3}}}$
+\end{example}
 \begin{gather*}
     \left(
         \frac{-16}{3}
-    \right) \cdot \sqrt{\frac{2}{3}} + \frac{\frac{64}{3}}{2\cdot\sqrt{\frac{2}{3}}}
+    \right) \cdot 
+    \sqrt{
+        \frac{2}{3}} + 
+        \frac{\frac{64}{9}}
+        {2\cdot\sqrt{\frac{2}{3}}} = 
+         - \frac{2^4}{3} \cdot \frac{2^\frac{1}{2}}{3^\frac{1}{2}} + \frac{\frac{2^6}{3^2}}{2 \cdot \frac{2^\frac{1}{2}}{3^\frac{1}{2}}} 
+        = - \frac{2^\frac{9}{2}}{3^\frac{3}{2}} + \left( \frac{2^6}{3^2} \cdot \frac{3^\frac{1}{2}}{2^\frac{3}{2}} \right)
+        = - \frac{2^\frac{9}{2}}{3^\frac{3}{2}} + \frac{2^\frac{9}{2}}{3^\frac{3}{2}} = \doubleunderline{0}
 \end{gather*}
-\subsubsection*{Zjednodušte}
+\begin{example}
+    Zjednodušte $\biggl( x-\frac{3x}{x+1} \biggr)\cdot 
+    \biggl( \frac{x-1}{x-2} - \frac{x}{x-1} \biggr) $
+\end{example}
 \begin{gather*}
     \biggl( x-\frac{3x}{x+1} \biggr)\cdot 
-    \biggl( \frac{x-1}{x+2} - \frac{x}{x-1} \biggr) = 
+    \biggl( \frac{x-1}{x-2} - \frac{x}{x-1} \biggr) = 
     \biggl( x-\frac{3x}{x+1} \biggr)\cdot 
-    \biggl(\frac{x-1}{x-1} \cdot \frac{x-1}{x+2} - \frac{x}{x-1} \biggr) = \\
+    \biggl(\frac{x-1}{x-1} \cdot \frac{x-1}{x-2} - \frac{x}{x-1} \biggr) = \\
      = \biggl( x-\frac{3x}{x+1} \biggr)\cdot 
-    \biggl( \frac{(x-1)^2}{(x+2)(x-1)} - \frac{x}{x-1} \biggr) = 
+    \biggl( \frac{(x-1)^2}{(x-2)(x-1)} - \frac{x}{x-1} \biggr) = 
     \biggl( x-\frac{3x}{x+1} \biggr)\cdot 
-    \biggl( \frac{(x-1)^2 - \bigl(x \cdot (x+2)\bigr)}{(x+2)(x-1)}\biggr) =
+    \biggl( \frac{(x-1)^2 - \bigl(x \cdot (x-2)\bigr)}{(x-2)(x-1)}\biggr) =
     \\  
     = \biggl(\frac{(x+1)x}{x+1} -\frac{3x}{x+1} \biggr)\cdot 
-    \biggl( \frac{(x-1)^2 - \bigl(x^2+2x\bigr)}{(x+2)(x-1)}\biggr) =
+    \biggl( \frac{(x-1)^2 - \bigl(x^2-2x\bigr)}{(x-2)(x-1)}\biggr) =
     \\
     = \biggl(
         \frac{x^2-2x}{x+1} 
     \biggr) \cdot 
     \biggl(
-        \frac{x^2-2x+1-x^2-2x}{(x+2)(x-1)}
+        \frac{x^2-2x+1-x^2+2x}{(x-2)(x-1)}
     \biggr) = \biggl(
         \frac{x^2-2x}{x+1}
     \biggr) \cdot \biggl(
-        \frac{-4x+1}{(x+2)(x-1)}
-    \biggr) = ... ToBeContinued
+        \frac{1}{(x-2)(x-1)}
+    \biggr) = \\=   \frac{x(x-2)}{x+1}  \cdot \frac{1}{(x-2)(x-1)} = \frac{x}{x+1} \cdot \frac{1}{x-1} = \doubleunderline{\frac{x}{x^2-1}}
 \end{gather*}
+\begin{example}
+    Zjednodušte $\frac{3y+2}{y^2-2y+1} - \frac{6}{y^2-1} - \frac{3y-2}{y^2+2y+1}$
+\end{example} 
+\begin{align*}
+    \frac{3y+2}{y^2-2y+1} - \frac{6}{y^2-1} - \frac{3y-2}{y^2+2y+1} 
+    \\ &= \frac{3y+2}{(y-1)(y-1)} - \frac{6}{(y+1)(y-1)} - \frac{3y+2}{(y+1)(y+1)} 
+    \\ &= \frac{((3y+2)\cdot(y+1))-((6)\cdot(y-1))}{(y-1)^2(y+1)} - \frac{3y+2}{(y+1)^2}
+    \\ &= \frac{3y^2+3y+2y+2-6y+6}{(y-1)^2(y+1)} - \frac{3y+2}{(y+1)^2}
+    \\ &= \frac{3y^2-y+8}{(y-1)^2(y+1)} - \frac{3y+2}{(y+1)^2}
+    \\ &= \frac{((3y^2-y+8)\cdot(y+1))-((3y+2)(y^2-2y+1)}{(y^2-1)^2}
+    \\ &= \frac{(3y^3+3y^2-y^2-y+8y+8)-(3y^3-6y^2+3y+2y^2-4y+2)}{(y^2-1)^2}
+    \\ &= \frac{3y^3+3y^2-y^2-y+8y+8-3y^3+6y^2-3y-2y^2+4y-2}{(y^2-1)^2}
+    \\ &= \frac{6y^2+8y+6}{(y^2-1)^2}
+    = \doubleunderline{\frac{2(3y^2+4y+3)}{(y^2-1)^2}}
+\end{align*}
+\page
+\begin{example}
+    Řešte rovnici s neznámou $x \in \mathbb{R} $ 
+\end{example}
+\begin{align*}
+    \frac{x+5}{10} - \frac{x-4}{8} &= 1
+    \\ \frac{((x+5)\cdot(8)) - ((x-8)\cdot(10))}{80} &= 1
+    \\ \frac{8x+40 - 10x +80}{80} &= 1
+    \\ 8x + 40 - 10x + 80 &= 80
+    \\ -2x  &= -40
+    \\   x  &=20
+\end{align*}
+\page
 \subsection*{Hodina 07.10.2022}
  \begin{gather*}
     \biggl( \frac{1}{x+1} - \frac{2x}{x^2-1} \biggr) \biggl(\frac{1}{x} - 1\biggr)
