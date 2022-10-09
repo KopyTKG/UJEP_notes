@@ -1,8 +1,19 @@
 \input{../assets/index.tex}
 \begin{document}
  \section*{Repetitorium matematiky}
-
-
+\(
+(a+b)^2 = a^2 +2ab + b^2 \\
+(a-b)^2 = a^2 -2ab + b^2 \\
+(a+b)(a-b) = a^2 - b^2
+\)
+\subsection*{Test repetitorium}
+\subsubsection{Upravte do základního tvaru}
+\begin{gather*}
+    \bigl(
+        \frac{-16}{3}
+    \bigr) \cdot \sqrt{\frac{2}{3}} + \frac{\frac{64}{3}}{2\cdot\sqrt{\frac{2}{3}}}
+\end{gather*}
+\subsection*{Hodina 07.10.2022}
  \begin{gather*}
     \biggl( \frac{1}{x+1} - \frac{2x}{x^2-1} \biggr) \biggl(\frac{1}{x} - 1\biggr)
     =  \biggl( \frac{1}{ x+1} - \frac{2x}{(x+1)(x-1)}\biggr)\biggl(\frac{1}{x} -1 \biggr)
@@ -11,11 +22,29 @@
     = \biggl( \frac{x-1}{(x+1)(x-1)} - \frac{2x}{(x+1)(x-1)}\biggr) \biggl(\frac{1}{x} - 1\biggr) = 
     \\
     = \biggl(\frac{-x-1}{(x+1)(x-1)}\biggr)\biggl(\frac{1}{x} - \frac{x}{x}\biggr) 
-    = \frac{-x-1}{(x+1)(x-1)}* \frac{1 - x}{x}
-    = \frac{-(x+1)}{(x+1)(x-1)} * \frac{1-x}{x} =
+    = \frac{-x-1}{(x+1)(x-1)} \cdot \frac{1 - x}{x}
+    = \frac{-(x+1)}{(x+1)(x-1)} \cdot \frac{1-x}{x} =
     \\ = \frac{-1}{x-1} * \frac{1-x}{x} = \frac{-(1-x)}{(x-1)(x)} = \frac{-(-1)(x-1)}{(x-1)x} = \doubleunderline{\frac{1}{x}}
 \end{gather*}
 \begin{gather*}
-    \biggl( \frac{3}{(x-3)^2} + \frac{1}{x+3}- \frac{6}{x^2-9}\biggr) * \frac{x^2-6x+9}{2} =
+    \biggl( \frac{3}{(x-3)^2} + \frac{1}{x+3}- \frac{6}{x^2-9}\biggr) \cdot \frac{x^2-6x+9}{2}
+    = \biggl( \frac{3}{(x-3)(x-3)} + \frac{1}{x+3} - \frac{6}{(x+3)(x-3)} \biggr) \cdot \frac{(x-3)(x-3)}{2} =
+    \\ = \biggl(
+    \frac{3}{(x-3)(x-3)} + \frac{x-3}{(x+3)(x-3)} - \frac{6}{(x+3)(x-3)}
+    \biggr) \cdot \frac{(x-3)(x-3)}{2} = \\ = 
+    \biggl(
+        \frac{3}{(x-3)(x-3)} + \frac{x-9}{(x+3)(x-3)}
+    \biggr) \cdot \frac{(x-3)(x-3)}{2} =
+    \\ = \biggl(
+        \frac{3}{(x-3)(x-3)} + \frac{x-9}{(x+3)(x-3)} \cdot \frac{(x-3)}{(x-3)}
+    \biggr) \cdot \frac{(x-3)(x-3)}{2} = \\ =
+     \biggl(
+        \frac{3}{(x-3)^2} + \frac{(x-9)(x-3)}{(x+3)(x-3)^2} 
+    \biggr) \cdot \frac{(x-3)^2}{2} = \frac{3x+9+\bigl((x-9)(x-3)\bigr)}{(x+3)(x-3)^2} \cdot \frac{(x-3)^2}{2} =
+    \\ = \frac{3x+9+\bigl((x-9)(x-3)\bigr)}{2(x+3)} = \frac{3x+9+(x^2-3x-9x+27)}{2(x+3)} = \\ =
+    \doubleunderline{\frac{x^2-9x+36}{2(x+3)}}
+\end{gather*}
+\begin{gather*}
+    \frac{x^2+7x}{9-x^2} : \frac{x^2-49}{x+3} = \frac{x(x+7)}{(x+3)(-x+3)} \cdot \frac{x+3}{(x+7)(x-7)} = \doubleunderline{\frac{x}{(x-7)(3-x)}}
 \end{gather*}
 \end{document}
