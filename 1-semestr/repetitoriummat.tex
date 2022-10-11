@@ -4,8 +4,17 @@
 \(
 (a+b)^2 = a^2 +2ab + b^2 \\
 (a-b)^2 = a^2 -2ab + b^2 \\
-(a+b)(a-b) = a^2 - b^2
+(a+b)(a-b) = a^2 - b^2 \\\\
+D = b^2 - 4ac \\\\
+x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} \\ \\
+a = \log_b{x} \Rrightarrow b^a = x\\
+\log{a} + \log{b} = \log{a\cdot b} \\
+\log{a} - \log{b} = \log{\frac{a}{b}} \\
+\log_a{b^n} = n\cdot\log_a{b} \\
+a^{\log_a{b}} = b \\
+\frac{\log{a}}{\log{b}} = \log_b{a}
 \)
+\page
 \subsection*{Test repetitorium} 
 \begin{example}
     Upravte do základního tvaru: $\left(
@@ -71,17 +80,40 @@
     \\ &= \frac{6y^2+8y+6}{(y^2-1)^2}
     = \doubleunderline{\frac{2(3y^2+4y+3)}{(y^2-1)^2}}
 \end{align*}
-\page
 \begin{example}
     Řešte rovnici s neznámou $x \in \mathbb{R} $ 
 \end{example}
 \begin{align*}
     \frac{x+5}{10} - \frac{x-4}{8} &= 1
-    \\ \frac{((x+5)\cdot(8)) - ((x-8)\cdot(10))}{80} &= 1
-    \\ \frac{8x+40 - 10x +80}{80} &= 1
-    \\ 8x + 40 - 10x + 80 &= 80
-    \\ -2x  &= -40
-    \\   x  &=20
+    \\ \frac{((x+5)\cdot(8)) - ((x-4)\cdot(10))}{80} &= 1
+    \\ \frac{8x+40-10x+40}{80} &= 1
+    \\ -2x + 80 &= 80
+    \\ -2x &= 0
+    \\ x &= \doubleunderline{0}
+\end{align*}
+\begin{example}
+    Řešte soustavu dvou rovnic o dvou neznámých $x$,$y \in \mathbb{R}$
+\end{example}
+\begin{align*}
+    3x &= -4y+1
+    \\ 3y &= 4x
+    \\ y &= \frac{4x}{3}
+    \\ 3x &= -\frac{16x}{3} + 3
+    \\ 9x &= -16x +3
+    \\ 25x &= 3
+    \\  x &= \doubleunderline{\frac{3}{25}}
+    \\ y &= \frac{\frac{4}{1}\cdot \frac{3}{25}}{\frac{3}{1}} = \frac{12}{25} \cdot \frac{1}{3} = \frac{12}{75} = \doubleunderline{\frac{4}{25}}
+\end{align*}
+\begin{example}
+    Řešte nerovnici s neznámou $x \in \mathbb{R}$
+\end{example}
+\begin{align*}
+    x^2+10 &> 7x
+    \\
+    x^2 -7x + 10 &> 0 \\
+    D = (-7)^2 - 4\cdot1\cdot10 &= 49-40 = 9 \\
+    x_{1,2} = \frac{7 \pm 3}{2} &\Rrightarrow x_1 = 5, x_2 = 2 \\\\
+    x \in (-\infty, 2) &\cup (5, \infty) 
 \end{align*}
 \page
 \subsection*{Hodina 07.10.2022}

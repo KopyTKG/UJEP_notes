@@ -62,4 +62,53 @@ Goniometrocké fuknce
         \(\coth{x}=\frac{\cos{x}}{\sin{x}} \) \\
     \end{tabular}
 \end{center}
+\page
+\subsection*{10.10.2022}
+\subsubsection*{Posloupnost a její limita}
+
+\textbf{Omezenost}
+\\\\
+\begin{math}
+    F N \rightarrow R
+    \\ x_n = \frac{2n + 1}{3n}
+    \\ 1 \rightarrow x_1 = 1
+    \\ 2 \rightarrow x_2 = \frac{5}{6}
+    \\\vdots
+    \\ x_{10} = \frac{21}{30}
+\end{math}
+\\\\
+$x_n$ je shora omezená  $<=>$ $\exists k \in R \forall n \in N , x_n \leqslant k$
+
+\begin{gather*}
+    k = 2
+    \\ \frac{2n+1}{3n} \leq  2
+    \\ 2n+1 \leq 6n
+    \\ 1 \leq 4n
+\end{gather*}
+
+\textbf{Posloupnost konvergentní}
+\begin{description}
+    \dtitem{vlastní limita}   
+    $ y_n = \frac{1}{n} \rightarrow 0 \\ \lim(y_n) = 0$
+\end{description}
+
+\begin{enumerate}
+    \item $\frac{\infty}{\infty}$
+    \begin{gather}
+        \lim{\frac{3n-8}{56+2n}} = 
+         \lim{\frac{\frac{3n}{2} - \frac{8}{n}}{\frac{56}{n}+\frac{2n}{n}}}
+         \\
+         \lim_{n\rightarrow\infty}{\frac{3n^2-8}{56+2n}} = \left[\frac{\infty}{\infty}\right] =
+          \lim{\frac{\frac{3n^2}{n}-\frac{8}{n}}{\frac{56}{n}+\frac{2n}{n}}} =
+          \lim{\frac{3n- \frac{8}{n}}{\frac{56}{n} + 2}} = \left[ \frac{\infty}{2}\right] = \doubleunderline{\infty}
+        \\
+        \lim{\frac{n!}{10^n}} \cong 0
+        \\x_1 = 0.1
+        \\x_2 = 0.02
+        \\x_3 = 0.006
+    \end{gather}
+\end{enumerate}
+\begin{align}
+    \lim{(\sqrt{n^2+100}-n)}
+\end{align}
 \end{document}
