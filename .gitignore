@@ -3,6 +3,7 @@
 *.log
 *.fdb_latexmk
 *.synctex.gz
+*.toc
 
 .ipynb_checkpoints/
 .virtual_documents/
