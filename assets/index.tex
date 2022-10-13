@@ -27,7 +27,7 @@
 \newcommand{\voc}[1]{\textbf{#1}}
 
 \makeatletter
-\newcommand\doslashcirc[2]{%
+\newcommand{\doslashcirc}[2]{%
   \sbox\z@{$#1\m@th\circ$}%
   \setlength\unitlength{\wd\z@}
   \begin{picture}(1,1)
@@ -37,8 +37,7 @@
   \end{picture}%
 }
 \makeatother
-
-\newcommand{\diameter}{$\slashcirc$ }
+\newcommand{\diameter}[2]{$\slashcirc #1$#2}
 
 \newcommand{\TODO}[1]{
 	\begin{large}
@@ -70,11 +69,7 @@
 \newcommand{\berry}[1]{\textcolor{WildStrawberry}{#1}}
 
 % page command for new page easy use
-\newcommand\page{\newpage}
-% new paragraph without bold text
-\newcommand{\para}[1]{
-	\paragraph{\normalfont{#1}}
-}
+\newcommand{\page}{\pagebreak}
 
 \newcommand{\bitem}[1]{\item \textbf{#1}} %bold item command
 \newcommand{\mitem}[1]{\item \textbf{\large{#1}}} %main item command (large bold item)
@@ -95,42 +90,5 @@
 \renewenvironment{enumerate}[1]{\begin{compactenum}#1}{\end{compactenum}}
 \renewenvironment{description}[0]{\begin{compactdesc}}{\end{compactdesc}}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\newcommand{\frontpage}[2]{
-\begin{center}
-       \vspace{1cm}
-       \begin{center}
-       		\begin{small}
-               Vyšší odborná škola ekonomická, sociální a zdravotnická, \break
-		Obchodní akademie, Střední pedagogická škola a Střední zdravotnická škola, 
-						Most, příspěvková organizace 
-       		\end{small}
-       \end{center}
-		\vspace{\fill}
-        \begin{center}
-        		\begin{Huge}
-        			\textbf{Seminární práce}
-        		\end{Huge}
-        	\end{center}
-        	\begin{center}
-        		\begin{Large}
-        			\textbf{Sociální podnikání}
-        		\end{Large}
-        \end{center}
-        %\vspace{16cm}
-        \vspace{\fill}
-        \begin{normalsize}
-        		\begin{tabular}{p{0cm} p{1.5cm} p{10cm}}
-        		& \textbf{Jméno:} & Martin Kopecký   \\
-        		& \textbf{Třída:} & 1.R    \\
-       	 	& \textbf{Obor:}  & Firemní ekonomika \\
-        		& \textbf{Datum:} & \Today
-        		\end{tabular}
-        \end{normalsize}
-    \end{center}
-    \thispagestyle{empty}
-    \page
-}
-
-
 
 \graphicspath{{../images/}}
