@@ -58,5 +58,7 @@ $ph(a) = 1$
 **Spojky**
 $\neg$ $\land$ $\lor$ $=>$ $<=>$
 
+
 **tautologie** je vždy pravdivý výrok
+
 **kontradicke** je vždy nepracdivý výrok
