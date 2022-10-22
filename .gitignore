@@ -5,5 +5,7 @@
 *.synctex.gz
 *.toc
 
+programatorska-cvicebnice-1.pdf
+
 .ipynb_checkpoints/
 .virtual_documents/
