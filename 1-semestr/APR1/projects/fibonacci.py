@@ -32,9 +32,19 @@ fib = fibonacci(int(input("Zadej číslo: ")))
 numbers_iter = fib.iteration()
 numbers_recu = fib.recursion()
 
+
+print("""
+-----------------------------
+            rekurze         
+-----------------------------
+""")
+
 for number in numbers_recu:
     print(number)
-
-print("--------------------------------")
+print("""
+-----------------------------
+            iterace         
+-----------------------------
+""")
 for number in numbers_iter:
     print(number)

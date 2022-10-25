@@ -1,0 +1,40 @@
+\input{../assets/index.tex}
+
+\begin{document}
+  \section*{Teoretické základy informatiky 1}
+
+  \subsection*{Predikátový jazyk (P)}
+  \begin{enumerate}
+    \item  Symboly pro konstanty
+    \item Symboly relační - predikátové $=$
+    \item Funkční symboly $f$
+    \item symboly pro proměnné
+    \item symboly pro logické spojky $\neg, \lor, \land, \implies, \impliedby, \iff$
+    \item symboly pro kvantifikátory $\forall, \exists$
+    \item symboly pomocné $\left(\right), [] , \{\},;$
+  \end{enumerate}
+ 
+
+  \subsection*{Slovo}
+  \begin{enumerate}
+    \item Každá konstanta
+    \item Každá proměnná je term
+    \item Jsou-li $t_1, \dots , t_n$ termy P-jazyka, a je-li $f$ funkční symbol P-jazyka $f(t_1, \dots, t_n)$ je term
+  \end{enumerate}
+
+  \subsection*{Formule P-jazyka budeme nazývat}
+  \begin{enumerate}
+    \item Každou atomickou formuly
+    \item Jsou-li $\psi, \varphi$ formule, pak také $(\psi \land \varphi), (\psi \lor \varphi), (\psi \implies \varphi), (\psi \iff \varphi), \neg \varphi$ jsou formile
+    \item Jetliže $x$ je proměnná a $\varphi$ je formule, potom také $(\forall x)\varphi$ a $(\exists x)\varphi$ jsou formule
+    \item jiné formule P-jazyk nemá
+  \end{enumerate}
+
+  \subsection*{Syntaktický strom}
+  \begin{align*}
+    (\forall x)(\forall y)(\forall z)(x<z  &\implies x+z=y+z)
+    \\(\forall y)(\forall z)(x<z  &\implies x+z=y+z)
+    \\(\forall z)(x<z  &\implies x+z=y+z)
+    \\x<z  &\implies x+z=y+z
+\end{align*}
+\end{document}
