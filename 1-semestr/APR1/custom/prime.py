@@ -1,5 +1,5 @@
 
-class number:
+class intiger(int):
     def __init__(self,number: int):
         self.__number = number
         self.__odd = self.__isOdd()
@@ -42,7 +42,7 @@ class number:
 def __main():
     print("runnin'")
     for n in range(50):
-        new_n = number(n)
+        new_n = intiger(n)
         print(f"{n} is prime {new_n.prime()}")
         print(f"{n} is odd {new_n.odd()}")
         print(f"{n} is even {new_n.even()}")
