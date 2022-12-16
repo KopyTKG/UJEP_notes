@@ -7,6 +7,7 @@ def validInput(text: str) -> str:
         input_str = input(text).strip()
     return input_str
 
+
 def getCoeficients(pocet: int, inputs: list, parse: callable) -> tuple:
     numbers = []
     for index in range(pocet):
@@ -15,8 +16,10 @@ def getCoeficients(pocet: int, inputs: list, parse: callable) -> tuple:
         numbers.append(valid)
     return numbers
 
+
 def getDiscriminant(a: float,b: float, c: float) -> float:
     return b**2-4*a*c
+
 
 def getRoots(D: float, a: float, b: float, c: float) -> dict:
     if D < 0:
@@ -37,7 +40,6 @@ def getRoots(D: float, a: float, b: float, c: float) -> dict:
                 }
 
 
-
 def __main():
     # Načtení koeficientů
     lenght = 3
@@ -52,6 +54,7 @@ def __main():
     roots = getRoots(disc, *coefs)
     print(roots)
     return None
+
 
 if __name__ == "__main__":
     __main()
