@@ -1,0 +1,4 @@
+/home/kubera/.config/google-chrome/Default/Service Worker/CacheStorage/eadf114e35641d8a14aa9648d8e1c01b4b3bb3f0/index.txt
+/home/kubera/.config/google-chrome/Default/Service Worker/CacheStorage/579544fd7d0441717f082c9eb123588966aa57ac/index.txt
+/home/kubera/.cache/tracker/locale-for-miner-apps.txt
+/home/kubera/Stažené/OPS-kombinovane/skripty2/log.txt
