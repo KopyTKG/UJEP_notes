@@ -59,8 +59,9 @@ class Painter(QWidget):
 
         turtle = Turtle(
             start=center,
-            geneticCode="FLFLFLF",
-            stepLength= 100
+            geneticCode="[FLFRFL]",
+            stepLength= 100,
+            loopCount=4
         )
         turtle.run()
         for step in turtle:
@@ -86,7 +87,7 @@ class Painter(QWidget):
             painter.drawLine(*line)
         
         self.paintCenter(painter)
-        self.paintTurtleMove(painter, [(self.__width /2 ),(self.__height - self.__border)-25/2])
+        self.paintTurtleMove(painter, [(self.__width /2 ),(self.__height/2)])
         painter.end()
 
 if __name__ == '__main__':

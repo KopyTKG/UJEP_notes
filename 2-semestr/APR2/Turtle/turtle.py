@@ -10,12 +10,13 @@ class Direction(Enum):
     RIGHT= 6
 
 class Turtle:
-    def __init__(self, start: List, geneticCode: str, stepLength: int):
+    def __init__(self, start: List, geneticCode: str, stepLength: int, loopCount: int):
         self.__stepLength = stepLength
         self.__steps = [start]
         self.__direction = Direction.UP
-        self.__validSymbols = 'FRL'
         self.__geneticCoce = geneticCode
+        self.__loopCount = loopCount
+        self.__degreeStr = ""
 
         self.__directionMapLeft = {
                 Direction.UP: Direction.LEFT,
@@ -33,18 +34,44 @@ class Turtle:
 
     
     def run(self) -> List:
+        usedSymbols = ""
+        activeLoop = False
         for symbol in self.__geneticCoce:
-            match = re.search(symbol,self.__validSymbols)
-            assert match and symbol != None
+            usedSymbols += symbol
+            if symbol == "[":
+                self.__geneticCoce = self.__geneticCoce.replace(usedSymbols, "") 
+                loopIndex = self.__geneticCoce.index("]")
+                for i in range(self.__loopCount):
+                    for loopSymbol in self.__geneticCoce:
+                        if loopSymbol == "]":
+                            break
+                        self.__doMove(loopSymbol)                   
+                tmp = ""
+                for i in range(loopIndex , len(self.__geneticCoce)):
+                    tmp += self.__geneticCoce[i]
+                self.__geneticCoce = tmp
+                activeLoop = True
+                continue
+            
+            if symbol == "]":
+                activeLoop = False
+                continue
+            if not activeLoop:
+                self.__doMove(symbol)
+        return self.__steps
+
+    def __doMove(self, symbol):
+        try:
+            if int(symbol):
+                pass
+        except:
             if symbol == "L":
                 self.__turnLeft()
             if symbol == "R":
                 self.__turnRight()
             if symbol == "F":
                 self.__move()
-
-        return self.__steps
-
+        
     def __move(self) -> None:
         oldPosition = copy(self.__steps[len(self.__steps)-1])
 
@@ -82,7 +109,9 @@ class Turtle:
 def main():
     newTurtle = Turtle(
         start=[0,0],
-        geneticCode="FFLFRFRFLF"
+        geneticCode="FFLFRFRF[FF]LF[LF]",
+        stepLength=10,
+        loopCount=4
     )
     newTurtle.run()
     for step in newTurtle:
