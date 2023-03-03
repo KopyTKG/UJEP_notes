@@ -1,7 +1,8 @@
 from typing import Any
 
 class Queue:
-    def __init__(self, start=[], capacity=10):
+    def __init__(self, start=[], capacity=10, loop=False):
+        self.__loop = loop
         if not start:
             self.__memory = []
         else:
@@ -10,6 +11,9 @@ class Queue:
             else:
                 self.__memory = start
         self.__capacity = capacity
+
+    def isLoop(self):
+        return self.__loop
     
     def enqueue(self, item) -> None:
         if len(self.__memory) < self.__capacity: 
@@ -37,7 +41,31 @@ class Queue:
 
     def size(self) -> int:
         return(len(self.__memory))
-    
+
+    def __len__(self) -> int:
+        return self.size()
+
+    def __repr__(self):
+        reprStr = "["
+        for item in self.__memory:
+            if type(item) == Queue:
+                reprStr += repr(item)
+            else:
+                reprStr += f"{item}"
+        reprStr += "]"
+        return reprStr
+
+    def __str__(self) -> str:
+        strRet = ""
+        try:
+            for item in self.__memory:
+                if type(item) == Queue:
+                    strRet += "(Queue)"
+                else:
+                    strRet += item
+            return strRet
+        except:
+            raise Exception("Not iterable type")
     def __iter__(self):
         for item in self.__memory:
             yield item

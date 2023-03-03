@@ -1,4 +1,4 @@
-import sys
+import sys, time
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5.QtGui import QPainter, QPen, QBrush, QColor
 from PyQt5.QtCore import Qt
@@ -54,13 +54,13 @@ class Painter(QWidget):
     def paintTurtleMove(self,painter, center):
         pen = QPen()
         pen.setColor(Qt.black)
-        pen.setWidth(5)
+        pen.setWidth(2)
         painter.setPen(pen)
 
         turtle = Turtle(
             start=center,
-            geneticCode="[FLFRFL]",
-            stepLength= 100,
+            geneticCode="[[R[LL[FRF]]LL][L[RR[FLFR]]RR]]",
+            stepLength= 10,
             loopCount=4
         )
         turtle.run()
@@ -86,7 +86,7 @@ class Painter(QWidget):
         for line in border:
             painter.drawLine(*line)
         
-        self.paintCenter(painter)
+        #self.paintCenter(painter)
         self.paintTurtleMove(painter, [(self.__width /2 ),(self.__height/2)])
         painter.end()
 
