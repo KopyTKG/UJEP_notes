@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "timeGroups": 20,
+        "maxDaysPreGroup": 6, 
+        "": "" 
+    }
+}

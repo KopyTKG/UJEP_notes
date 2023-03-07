@@ -16,8 +16,8 @@ CREATE TABLE `codes` (
   `rightID` int,
   `realCode` text
 );
-CREATE TABLE `users` (
-  `userID` int PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `emploies` (
+  `employeID` int PRIMARY KEY AUTO_INCREMENT,
   `chipID` int,
   `codeID` int,
   `firstname` text,
@@ -58,7 +58,7 @@ CREATE TABLE `days` (
 );
 CREATE TABLE `logs` (
   `logID` int PRIMARY KEY AUTO_INCREMENT,
-  `userID` int,
+  `employeID` int,
   `chipID` int,
   `codeID` int,
   `status` tinyint,
@@ -69,13 +69,13 @@ CREATE TABLE `logs` (
 /* Create references*/
 ALTER TABLE `chips` ADD FOREIGN KEY (`codeID`) REFERENCES `codes` (`codeID`);
 ALTER TABLE `codes` ADD FOREIGN KEY (`rightID`) REFERENCES `rightsGroups` (`rGroupID`);
-ALTER TABLE `users` ADD FOREIGN KEY (`chipID`) REFERENCES `chips` (`chipID`);
-ALTER TABLE `users` ADD FOREIGN KEY (`codeID`) REFERENCES `codes` (`codeID`);
+ALTER TABLE `emploies` ADD FOREIGN KEY (`chipID`) REFERENCES `chips` (`chipID`);
+ALTER TABLE `emploies` ADD FOREIGN KEY (`codeID`) REFERENCES `codes` (`codeID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`accessGroup`) REFERENCES `accessGroups` (`aGroupID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`timeGroup`) REFERENCES `timeGroups` (`tGroupID`);
-ALTER TABLE `logs` ADD FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
-ALTER TABLE `logs` ADD FOREIGN KEY (`chipID`) REFERENCES `users` (`chipID`);
-ALTER TABLE `logs` ADD FOREIGN KEY (`codeID`) REFERENCES `users` (`codeID`);
+ALTER TABLE `logs` ADD FOREIGN KEY (`employeID`) REFERENCES `emploies` (`employeID`);
+ALTER TABLE `logs` ADD FOREIGN KEY (`chipID`) REFERENCES `emploies` (`chipID`);
+ALTER TABLE `logs` ADD FOREIGN KEY (`codeID`) REFERENCES `emploies` (`codeID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`tGroupID`) REFERENCES `timeGroups` (`tGroupID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`dayID`) REFERENCES `days` (`dayID`);
 ALTER TABLE `doorsGroups` ADD FOREIGN KEY (`doorID`) REFERENCES `doors` (`doorID`);
