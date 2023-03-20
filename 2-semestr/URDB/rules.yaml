@@ -7,7 +7,6 @@ maxDayPerGroup: 6
 
 #doors settings
 Doors:
-  MACS: ['72:37:c1:6c:75:2d', 'e3:ec:cc:d7:59:2e', 'ec:02:6c:de:ed:f8', '13:b8:d6:ce:b3:78', 'b6:cc:04:5f:73:7e', '85:b8:1d:7f:5f:c7', 'cb:3c:a4:3d:6b:4f', '9e:93:89:f2:15:9d', 'd2:e7:4e:37:76:de', '93:91:a5:d2:f7:e1', '24:0f:ac:29:49:dd', 'ba:1c:b9:16:41:b5', 'a4:ae:98:6e:c2:eb', '79:8d:9f:14:32:71', 'ab:f5:fd:74:95:1b', '37:6a:2f:df:06:2f', 'b2:f5:97:91:84:46', 'eb:94:70:34:1b:85', 'c0:6b:48:91:7d:ee', '13:c6:74:8a:e8:51', 'f7:76:9a:a1:b6:19', 'f7:65:d6:73:b0:96', '98:6c:e8:b0:6f:86', '83:4a:6b:c3:67:7b', '9c:bd:72:24:95:f1', '0b:ef:01:05:6d:19', '11:4d:f1:71:bb:b6', 'c7:f7:ed:a5:06:ce', '15:21:81:b1:87:3d', 'b0:fc:66:45:55:5e', '59:f0:49:02:98:69', '2d:98:34:bd:39:b2','69:56:c1:fe:8d:fa', '75:a7:94:2b:da:64', '2b:a7:37:51:23:13', '03:6b:63:98:4c:35', 'b0:f1:19:20:d6:d1']
   Descriptions: ['Lab A1 Basement', 'Lab A2 Basement', 'Lab B1 Basement', 'Lab B2 Basement', 'Lab C1 Basement', 'Lab C2 Basement', 'Lab C3 Basement', 'Lab D1 Basement', 'Lab D2 Basement', 'Lab E1 Basement', 'Lab E2 Basement', 'Lab E3 Basement', 'Office floor 2', 'Office floor 3', 'Office floor 4', 'Office floor 5', 'Office floor 6', 'Office floor 7', 'Office floor 8', 'Office floor 9', 'Office floor 10', 'North door 1', 'North door 2', 'East door', 'South door', 'Server room -1 floor', 'Server room 2 floor', 'Server room 5 floor', 'Server room 9 floor', '3 floor management', '6 floor management', '9 floor management', '10 floor CEO Office']
   Labs: 
     A: 2
@@ -26,3 +25,8 @@ accessGroups: ['Office pass floor 2', 'Office pass floor 3', 'Office pass floor 
 ServerRooms:
   MasterAdmin: ["%Server%%-1 floor%","%Server%%2 floor%", "%Server%%5 floor%","%Server%%9 floor%"]
   Admin: ["%Server%%2 floor%", "%Server%%5 floor%","%Server%%9 floor%"]
+
+Emploies:
+  Count: 95
+  Min: 4
+  Max: 10

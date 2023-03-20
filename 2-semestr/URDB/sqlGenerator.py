@@ -1,8 +1,29 @@
-import yaml
+import yaml, os
 from random import randint as rng, choice
 from classes import Queue, Randomizer
 
-home ="./2-semestr/URDB"
+
+def rand_mac():
+    return str("%02x:%02x:%02x:%02x:%02x:%02x" % (
+        rng(0, 255),
+        rng(0, 255),
+        rng(0, 255),
+        rng(0, 255),
+        rng(0, 255),
+        rng(0, 255)
+        )).upper()
+
+
+
+home =f"{os.getcwd()}/2-semestr/URDB"
+
+firstnames = surnames = Randomizer([])
+
+with open(f"{home}/Cache/firstnames.csv", "r") as Names: 
+    firstnames = Randomizer(Names.read().upper().split("\n"))
+with open(f"{home}/Cache/surnames.csv", "r") as Names: 
+    surnames = Randomizer(Names.read().split("\n"))
+
 
 rules = {}
 with open(f"{home}/rules.yaml", "r") as yml:
@@ -13,14 +34,15 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
     with open(f"{home}/RFID.sql", "r") as database:
         db = database.read()
     sql.write(db)
-    sql.write("""
+    sql.write("\n/* INSERT SECTION */ \n\n")
     
-/* INSERT SECTION */
-""")
-
+# Days insert -------------------------------
+    sql.write("/* ------ Days ------*/\n")
     for day in rules["days"]:
         sql.write(f"INSERT INTO `days` (`day`) VALUES ('{day}');\n")
     
+# Time groups insert -------------------------------
+    sql.write("\n\n/* ------ Time Groups ------*/\n")
     index = 1
     for count in range(0, rules['timeGroups']):
         valid = ["00",15,30,45]
@@ -35,17 +57,18 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
         index += 1
 
 # Doors -------------------------------    
-    macsDoors = Randomizer(rules["Doors"]["MACS"])
+    sql.write("\n\n/* ------ Doors ------*/\n")
     descDoors = Queue(rules["Doors"]["Descriptions"])
-
-    while not macsDoors.isEmpty() and not descDoors.isEmpty():
-        sql.write(f"INSERT INTO `doors` (`MAC`, `description`) VALUES ('{macsDoors.pop()}','{descDoors.dequeue()}'); \n")
+    while not descDoors.isEmpty():
+        sql.write(f"INSERT INTO `doors` (`MAC`, `description`) VALUES ('{rand_mac()}','{descDoors.dequeue()}'); \n")
 
 # Access groups -------------------------------    
+    sql.write("\n\n/* ------ Access Groups ------*/\n")
     accessGroups = Queue(rules["accessGroups"])
+    totalCount = 0
     while not accessGroups.isEmpty():
         sql.write(f"INSERT INTO `accessGroups` (`description`) VALUES ('{accessGroups.dequeue()}');\n")
-    
+        totalCount += 1
 
 # Lab access -------------------------------    
     labs = [
@@ -55,7 +78,7 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
         { "name": "D", "count": rules["Doors"]["Labs"]["D"] }, 
         { "name": "E", "count": rules["Doors"]["Labs"]["E"] }
     ]
-    
+    sql.write("\n\n/* ------ Door access link ------*/\n")
     for segment in labs:
         for count in range(segment["count"]):
             sql.write(f"INSERT INTO `doorsGroups` (`aGroupID`, `doorID`) VALUES (\n(SELECT `aGroupID` FROM `accessGroups` WHERE `description` LIKE '%pass {segment['name']}%'),\n(SELECT `doorID` FROM `doors` WHERE `description` LIKE '%{segment['name'] + str(count+1)}%'));\n\n")
@@ -68,3 +91,22 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
     
     for room in rules["ServerRooms"]["Admin"]:
         sql.write(f"INSERT INTO `doorsGroups` (`aGroupID`, `doorID`) VALUES (\n(SELECT `aGroupID` FROM `accessGroups` WHERE `description` = 'Admin'),\n(SELECT `doorID` FROM `doors` WHERE `description` LIKE '{room}'));\n\n")
+    sql.write("/* ------ Chips ------ */ \n")
+
+    for _ in range(rules["Emploies"]["Count"]):
+        sql.write(f"INSERT INTO `chips`(macCode) VALUES ('{rand_mac()}'); \n")
+# Emploies -------------------------------
+    sql.write("\n/* ------ Emploies ------ */ \n")
+    rnd = Randomizer([x for x in range(1, rules["Emploies"]["Count"]+1)])
+    for _ in range(rules["Emploies"]["Count"]):
+        sql.write(f"INSERT INTO `emploies` (`chipID`,`firstname`,`lastname`) VALUES ({rnd.pop()},'{firstnames.pop()}', '{surnames.pop()}'); \n")
+    
+    print(totalCount)
+    rnd = Randomizer([x for x in range(1, rules["Emploies"]["Count"]+1)])
+    while not rnd.isEmpty():
+        current = rnd.pop()
+        inner = rng(rules["Emploies"]["Min"], rules["Emploies"]["Max"]+1)
+        for __ in range(inner):
+            access = rng(1, totalCount)
+            time = rng(1, rules["timeGroups"])
+            sql.write(f"INSERT INTO `rightsGroups` (`employeID`, `accessGroup`, `timeGroup`) VALUES ({current},{access},{time}); \n")

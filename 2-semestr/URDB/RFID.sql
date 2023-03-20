@@ -8,27 +8,18 @@ USE `RFID`;
 /* Create tables*/
 CREATE TABLE `chips` (
   `chipID` int PRIMARY KEY AUTO_INCREMENT,
-  `codeID` int
-);
-CREATE TABLE `codes` (
-  `codeID` int PRIMARY KEY AUTO_INCREMENT,
-  `code` text,
-  `rightID` int,
-  `realCode` text
+  `macCode` text
 );
 CREATE TABLE `emploies` (
   `employeID` int PRIMARY KEY AUTO_INCREMENT,
   `chipID` int,
-  `codeID` int,
   `firstname` text,
-  `lastname` text,
-  `position` text
+  `lastname` text
 );
 CREATE TABLE `rightsGroups` (
-  `rGroupID` int PRIMARY KEY AUTO_INCREMENT,
+  `employeID` int,
   `accessGroup` int,
-  `timeGroup` int,
-  `description` text
+  `timeGroup` int
 );
 CREATE TABLE `accessGroups` (
   `aGroupID` int PRIMARY KEY AUTO_INCREMENT,
@@ -60,22 +51,18 @@ CREATE TABLE `logs` (
   `logID` int PRIMARY KEY AUTO_INCREMENT,
   `employeID` int,
   `chipID` int,
-  `codeID` int,
   `status` tinyint,
   `day` date,
   `time` timestamp
 );
 
 /* Create references*/
-ALTER TABLE `chips` ADD FOREIGN KEY (`codeID`) REFERENCES `codes` (`codeID`);
-ALTER TABLE `codes` ADD FOREIGN KEY (`rightID`) REFERENCES `rightsGroups` (`rGroupID`);
+ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`employeID`) REFERENCES `emploies` (`employeID`);
 ALTER TABLE `emploies` ADD FOREIGN KEY (`chipID`) REFERENCES `chips` (`chipID`);
-ALTER TABLE `emploies` ADD FOREIGN KEY (`codeID`) REFERENCES `codes` (`codeID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`accessGroup`) REFERENCES `accessGroups` (`aGroupID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`timeGroup`) REFERENCES `timeGroups` (`tGroupID`);
 ALTER TABLE `logs` ADD FOREIGN KEY (`employeID`) REFERENCES `emploies` (`employeID`);
 ALTER TABLE `logs` ADD FOREIGN KEY (`chipID`) REFERENCES `emploies` (`chipID`);
-ALTER TABLE `logs` ADD FOREIGN KEY (`codeID`) REFERENCES `emploies` (`codeID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`tGroupID`) REFERENCES `timeGroups` (`tGroupID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`dayID`) REFERENCES `days` (`dayID`);
 ALTER TABLE `doorsGroups` ADD FOREIGN KEY (`doorID`) REFERENCES `doors` (`doorID`);
