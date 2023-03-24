@@ -30,3 +30,6 @@ Emploies:
   Count: 95
   Min: 4
   Max: 10
+  logs:
+    min: 50
+    max: 500

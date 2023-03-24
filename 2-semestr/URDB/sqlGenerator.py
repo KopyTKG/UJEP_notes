@@ -1,6 +1,17 @@
 import yaml, os
-from random import randint as rng, choice
+from random import randint as rng, choice, randrange
 from classes import Queue, Randomizer
+from datetime import timedelta, datetime
+
+def random_date(start, end):
+    """
+    This function will return a random datetime between two datetime 
+    objects.
+    """
+    delta = end - start
+    int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
+    random_second = randrange(int_delta)
+    return start + timedelta(seconds=random_second)
 
 
 def rand_mac():
@@ -13,6 +24,8 @@ def rand_mac():
         rng(0, 255)
         )).upper()
 
+d1 = datetime.strptime('1/1/2022 00:00:00', '%d/%m/%Y %H:%M:%S')
+d2 = datetime.strptime('15/2/2023 00:00:00', '%d/%m/%Y %H:%M:%S')
 
 
 home =f"{os.getcwd()}/2-semestr/URDB"
@@ -101,7 +114,6 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
     for _ in range(rules["Emploies"]["Count"]):
         sql.write(f"INSERT INTO `emploies` (`chipID`,`firstname`,`lastname`) VALUES ({rnd.pop()},'{firstnames.pop()}', '{surnames.pop()}'); \n")
     
-    print(totalCount)
     rnd = Randomizer([x for x in range(1, rules["Emploies"]["Count"]+1)])
     while not rnd.isEmpty():
         current = rnd.pop()
@@ -110,3 +122,14 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
             access = rng(1, totalCount)
             time = rng(1, rules["timeGroups"])
             sql.write(f"INSERT INTO `rightsGroups` (`employeID`, `accessGroup`, `timeGroup`) VALUES ({current},{access},{time}); \n")
+
+    chips = Randomizer([x for x in range(1,rules["Emploies"]["Count"]+1)])
+    while not chips.isEmpty():
+        current = chips.pop()
+        iteration = rng(
+            rules["Emploies"]["logs"]["min"],
+            rules["Emploies"]["logs"]["max"]
+        )
+        for _ in range(iteration):
+            date = str(random_date(d1, d2))
+            sql.write(f"INSERT INTO `logs` (`chipID`, `date`, `time`) VALUES ({current},'{date.split(' ')[0]}','{date.split(' ')[1]}'); \n")
