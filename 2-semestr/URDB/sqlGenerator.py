@@ -24,7 +24,7 @@ def rand_mac():
         rng(0, 255)
         )).upper()
 
-d1 = datetime.strptime('1/1/2022 00:00:00', '%d/%m/%Y %H:%M:%S')
+d1 = datetime.strptime('1/1/2010 00:00:00', '%d/%m/%Y %H:%M:%S')
 d2 = datetime.strptime('15/2/2023 00:00:00', '%d/%m/%Y %H:%M:%S')
 
 
@@ -72,8 +72,10 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
 # Doors -------------------------------    
     sql.write("\n\n/* ------ Doors ------*/\n")
     descDoors = Queue(rules["Doors"]["Descriptions"])
+    total = 0
     while not descDoors.isEmpty():
         sql.write(f"INSERT INTO `doors` (`MAC`, `description`) VALUES ('{rand_mac()}','{descDoors.dequeue()}'); \n")
+        total += 1
 
 # Access groups -------------------------------    
     sql.write("\n\n/* ------ Access Groups ------*/\n")
@@ -132,4 +134,4 @@ with open(f"{home}/sql-insert.sql", "w") as sql:
         )
         for _ in range(iteration):
             date = str(random_date(d1, d2))
-            sql.write(f"INSERT INTO `logs` (`chipID`, `date`, `time`) VALUES ({current},'{date.split(' ')[0]}','{date.split(' ')[1]}'); \n")
+            sql.write(f"INSERT INTO `logs` (`chipID`, `doorID` , `date`, `time`) VALUES ({current},{rng(1, total)},'{date.split(' ')[0]}','{date.split(' ')[1]}'); \n")

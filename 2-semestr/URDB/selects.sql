@@ -44,6 +44,7 @@ SELECT e.firstname, e.lastname,count(d.dayID) from days d
                 on e.employeID = rg.employeID
         		GROUP BY e.employeID;
 
+
 /* Count door by group */
 CREATE VIEW `DoorsCount` AS
 SELECT ag.description,count(d.`doorID`) from doors d
@@ -53,13 +54,26 @@ SELECT ag.description,count(d.`doorID`) from doors d
     	INNER JOIN accessGroups
         AS ag
         on ag.aGroupID = dg.aGroupID
-        GROUP BY ag.description;
+        GROUP BY ag.description DESC;
+
 
 /* Count access per day */ 
 SELECT emploies.firstname, emploies.lastname, chips.macCode, logs.date, COUNT(logs.date) FROM logs
-INNER JOIN chips
-ON logs.chipID = chips.chipID
-INNER JOIN emploies
-on chips.chipID = emploies.chipID
-GROUP BY chips.macCode
-ORDER BY COUNT(logs.date);
+    INNER JOIN chips
+    ON logs.chipID = chips.chipID
+        INNER JOIN emploies
+        on chips.chipID = emploies.chipID
+        GROUP BY chips.macCode
+        ORDER BY COUNT(logs.date) DESC;
+
+
+/* Count access per door */
+SELECT emploies.firstname, emploies.lastname, chips.macCode, logs.date, doors.description, COUNT(logs.doorID) FROM logs
+    INNER JOIN chips
+    ON logs.chipID = chips.chipID
+        INNER JOIN emploies
+        on chips.chipID = emploies.chipID
+            INNER JOIN doors
+            on doors.doorID = logs.doorID
+            GROUP BY doors.description
+            ORDER BY COUNT(logs.date) DESC;

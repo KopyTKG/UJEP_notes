@@ -50,6 +50,7 @@ CREATE TABLE `days` (
 CREATE TABLE `logs` (
   `logID` int PRIMARY KEY AUTO_INCREMENT,
   `chipID` int NOT NULL,
+  `doorID` int NOT NULL ,
   `date` date NOT NULL,
   `time` time NOT NULL
 );
@@ -60,6 +61,7 @@ ALTER TABLE `emploies` ADD FOREIGN KEY (`chipID`) REFERENCES `chips` (`chipID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`accessGroup`) REFERENCES `accessGroups` (`aGroupID`);
 ALTER TABLE `rightsGroups` ADD FOREIGN KEY (`timeGroup`) REFERENCES `timeGroups` (`tGroupID`);
 ALTER TABLE `logs` ADD FOREIGN KEY (`chipID`) REFERENCES `chips` (`chipID`);
+ALTER TABLE `logs` ADD FOREIGN KEY (`doorID`) REFERENCES `doors` (`doorID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`tGroupID`) REFERENCES `timeGroups` (`tGroupID`);
 ALTER TABLE `daysGroups` ADD FOREIGN KEY (`dayID`) REFERENCES `days` (`dayID`);
 ALTER TABLE `doorsGroups` ADD FOREIGN KEY (`doorID`) REFERENCES `doors` (`doorID`);
