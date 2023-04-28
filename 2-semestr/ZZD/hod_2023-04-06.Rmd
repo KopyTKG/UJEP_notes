@@ -1,0 +1,79 @@
+---
+title: "Hodina 2023.04.06"
+output: html_notebook
+---
+#### Vyčistění paměti
+```{r}
+rm(list=ls()) # smaz vsechny promenne
+```
+#### Vektory
+```{r}
+pole <- c(1,2,3)
+pole2 <- c(4,5,6)
+
+pole3 <- pole*pole2
+```
+Skalární součin
+```{r}
+print(sum(pole3))
+```
+For cyklus
+```{3}
+src <- 0
+for(index in 1:length(pole)) {
+   src <- src + pole[index] * pole2[index]
+}
+```
+
+#### Matice
+definování matice
+```{r}
+matice <- matrix(1:9, nrow=3, ncol=3, byrow=TRUE)
+```
+výběr z matice
+```{r}
+matice[1,] # select first row
+matice[,1] # select first column
+matice[1,1] # select cell
+matice[,-2] # all but this one
+```
+
+####  Filtrování verktorů
+
+```{r}
+matice <- 0:30
+
+sude <- matice[matice %% 2 == 0]
+liche <- matice[matice %% 2 != 0]
+```
+```{r}
+sude
+liche
+
+```
+
+#### Faktory
+```{r}
+text <- "Well, there's egg and bacon; egg sausage and bacon; egg and spam;
+egg bacon and spam; egg bacon sausage and spam; spam bacon sausage and spam;
+spam egg spam spam bacon and spam;
+spam sausage spam spam bacon spam tomato and spam;"
+
+vec_text <- scan(text=text, what=" ")
+fac_text <- factor(vec_text, order=TRUE)
+summary(fac_text)
+```
+
+### Funkce
+
+#### definice
+```{r}
+faktorial <- function(cislo) {
+  fak <-1
+  for(i in 1:cislo) {
+    fak <- fak * i
+  }
+  return(fak)
+}
+print(faktorial(170))
+```
