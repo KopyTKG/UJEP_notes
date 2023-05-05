@@ -1,0 +1,43 @@
+---
+title: "Protokol"
+format: 
+  html:
+    toc: true
+    toc-title: "Totálně drlouhýýýý Table of kontent"
+editor: visual
+---
+
+```{r, warning=FALSE, message=FALSE, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(rvest)
+setwd("/home/kopy/Škola/2-semestr/ZZD/")
+```
+
+# Zpraconání datasetu Iris
+
+### better table view
+```{r, echo=FALSE}
+knitr::kable(head(iris,5))
+```
+
+### Zakladni statistika
+
+```{r, echo=FALSE}
+tabulka <- iris %>% group_by(Species) %>% summarise(petalL=mean(Petal.Length),
+                                                    petalW=mean(Petal.Width),
+                                                    sepalL=mean(Sepal.Length),
+                                                    sepalW=mean(Sepal.Width),)
+knitr::kable(tabulka)
+
+tabulka %>% pivot_longer(!Species, names_to = "listky", values_to = "hodnoty") %>% knitr::kable()
+```
+# Nacteni dat ze souboru
+[data zde](https://physics.ujep.cz/~jskvor/UDR/9/sw.csv)
+```{r, echo=FALSE}
+df <- read.csv("sw.csv")
+head(df) %>% knitr::kable()
+
+ggplot()
+```

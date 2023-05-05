@@ -1,0 +1,4 @@
+Jmeno,vek,mesto
+Karel,15,Most
+Daniel,50,Praha
+Nikola,33,Decin

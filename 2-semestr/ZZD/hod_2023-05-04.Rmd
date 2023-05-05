@@ -1,0 +1,17 @@
+---
+title: "R hodina 2023-04-13 (Tabulky)"
+output: html_notebook
+---
+#### Vyčistění paměti
+```{r message=FALSE, warning=FALSE, include=FALSE}
+rm(list=ls()) # smaz vsechny promenne
+print(ls())
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+<h1> test </h1>
+```{r}
+  
+```
