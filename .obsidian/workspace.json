@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4-semestr/USU/Úvod do strojového učení.md",
+                "file": "4-semestr/USU/scratch-means.py.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "4-semestr/USU/Úvod do strojového učení.md",
+                "file": "4-semestr/USU/scratch-means.py.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "4-semestr/USU/Úvod do strojového učení.md",
+                "file": "4-semestr/USU/scratch-means.py.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4-semestr/USU/Úvod do strojového učení.md"
+                "file": "4-semestr/USU/scratch-means.py.md"
               }
             }
           }
@@ -148,11 +148,30 @@
   },
   "active": "fbc9b03d8cbbc862",
   "lastOpenFiles": [
-    "4-semestr/USU",
-    "images/konst.png",
     "4-semestr/USU/Úvod do strojového učení.md",
-    "4-semestr",
-    "images/exp.png",
+    "4-semestr/USU/scratch-means.py.md",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_62/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_561/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_61/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_42585/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_40966/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_42074/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_40945/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_40675/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_40589/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/openml/id_3/__pycache__/__init__.cpython-311.pyc",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/images/flower.jpg",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/sklearn/datasets/images/china.jpg",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/scipy/ndimage/tests/dots.png",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/scipy/fft/_pocketfft/LICENSE.md",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/sample_data/logo2.png",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/sample_data/grace_hopper.jpg",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/sample_data/Minduka_Present_Blue_Pack.png",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.png",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/images/zoom_to_rect.svg",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/images/zoom_to_rect.png",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/matplotlib/mpl-data/images/zoom_to_rect-symbolic.svg",
+    "4-semestr/USU/venv/lib/python3.11/site-packages/numpy/random/LICENSE.md",
     "README.md"
   ]
 }
